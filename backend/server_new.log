@@ -1,0 +1,213 @@
+INFO:     Will watch for changes in these directories: ['/Users/abdalrheem/Desktop/TFO design/backend']
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process [59120] using WatchFiles
+INFO:     Started server process [59122]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     127.0.0.1:61654 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61680 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:61680 - "GET /ui/index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61680 - "GET /ui/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:61682 - "GET /ui/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61682 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61692 - "POST /sequence/parse HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61698 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61706 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61708 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61711 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61711 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:61711 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:61713 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61713 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61724 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61728 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61728 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61736 - "GET /ui/index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61736 - "GET /ui/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:61738 - "GET /ui/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61738 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:61742 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61763 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61763 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61773 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61778 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61781 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61784 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61816 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62282 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62282 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:62284 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62284 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62291 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62405 - "GET /ui/index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62406 - "GET /ui/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62405 - "GET /ui/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:62406 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:62493 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62493 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62498 - "OPTIONS /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62498 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62578 - "GET /sequence/search?query=NM_000546&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62578 - "GET /sequence/fetch/NM_000546 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62583 - "OPTIONS /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62583 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62585 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62761 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:62761 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:62764 - "GET / HTTP/1.1" 307 Temporary Redirect
+INFO:     127.0.0.1:62764 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:62766 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62766 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62774 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62777 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62780 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62783 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62786 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62792 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62808 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:62808 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:62810 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62810 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62815 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62818 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62833 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:63549 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63549 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63554 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64593 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64593 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:64594 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64594 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64600 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64625 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64630 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64630 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64644 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64726 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:64745 - "GET /sequence/search?query=MDM2&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64745 - "GET /sequence/fetch/XM_054372060 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64750 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49194 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:50072 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50072 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50072 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50073 - "GET /sequence/search?query=CTTNB1&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50094 - "GET /sequence/search?query=CTNNB1&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50094 - "GET /sequence/fetch/NM_001438871 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50107 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50116 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50133 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50139 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50301 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50430 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50633 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:50634 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50634 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51207 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51207 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51257 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51310 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51516 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51516 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51527 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51739 - "GET /ui/index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51739 - "GET /ui/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:51741 - "GET /ui/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51741 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:51769 - "GET /ui/index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51872 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51872 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51880 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52374 - "GET /sequence/search?query=kRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52374 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52386 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52464 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53746 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53746 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:53747 - "GET /sequence/search?query=CTNNB1&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53747 - "GET /sequence/fetch/NM_001438871 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53771 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53774 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53780 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53786 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53613 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:53613 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54830 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54830 - "GET /sequence/search?query=KRAS&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54830 - "GET /sequence/fetch/NM_001369786 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54831 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54840 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54840 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54840 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55253 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:55254 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55254 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55273 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55294 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+Traceback (most recent call last):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1346, in do_open
+    h.request(req.get_method(), req.selector, req.data, headers,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1257, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1303, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1252, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1012, in _send_output
+    self.send(msg)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 952, in send
+    self.connect()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 1419, in connect
+    super().connect()
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/http/client.py", line 923, in connect
+    self.sock = self._create_connection(
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 822, in create_connection
+    for res in getaddrinfo(host, port, 0, SOCK_STREAM):
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/socket.py", line 953, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/abdalrheem/Desktop/TFO design/backend/app/main.py", line 98, in search_sequence
+    return search_ncbi(query, organism)
+  File "/Users/abdalrheem/Desktop/TFO design/backend/app/sequence_parser.py", line 112, in search_ncbi
+    search_handle = Entrez.esearch(db="nucleotide", term=term, retmax=20)
+  File "/Users/abdalrheem/Library/Python/3.9/lib/python/site-packages/Bio/Entrez/__init__.py", line 235, in esearch
+    return _open(request)
+  File "/Users/abdalrheem/Library/Python/3.9/lib/python/site-packages/Bio/Entrez/__init__.py", line 623, in _open
+    handle = urlopen(request)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 214, in urlopen
+    return opener.open(url, data, timeout)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 517, in open
+    response = self._open(req, data)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 534, in _open
+    result = self._call_chain(self.handle_open, protocol, protocol +
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 494, in _call_chain
+    result = func(*args)
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1389, in https_open
+    return self.do_open(http.client.HTTPSConnection, req,
+  File "/Library/Developer/CommandLineTools/Library/Frameworks/Python3.framework/Versions/3.9/lib/python3.9/urllib/request.py", line 1349, in do_open
+    raise URLError(err)
+urllib.error.URLError: <urlopen error [Errno 8] nodename nor servname provided, or not known>
+INFO:     127.0.0.1:55295 - "GET /sequence/search?query=TP53&organism=Homo%20sapiens HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:55295 - "GET /sequence/fetch/TP53 HTTP/1.1" 500 Internal Server Error
+INFO:     127.0.0.1:55619 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:55619 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56227 - "GET /ui/index.html HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56227 - "GET /ui/css/style.css HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56229 - "GET /ui/js/app.js HTTP/1.1" 304 Not Modified
+INFO:     127.0.0.1:56229 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56448 - "GET /sequence/search?query=EGFR&organism=Homo%20sapiens HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56448 - "GET /sequence/fetch/XM_054357418 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56457 - "POST /tfo/find HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54554 - "GET /ui/index.html HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54556 - "GET /ui/js/app.js HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54554 - "GET /ui/css/style.css HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54556 - "GET /favicon.ico HTTP/1.1" 404 Not Found
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [59122]
+INFO:     Stopping reloader process [59120]

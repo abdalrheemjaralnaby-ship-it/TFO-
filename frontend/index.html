@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TriplexLab - TFO Finder</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <div class="logo-icon" aria-hidden="true"></div>
+                <h1>TriplexLab <span class="accent">TFO Finder</span></h1>
+            </div>
+            <div class="header-links">
+                <a href="#" class="header-link">Documentation</a>
+                <a href="#" class="header-link">About</a>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Step Wizard -->
+            <div class="wizard-progress">
+                <div class="step active" data-target="step-1">
+                    <div class="step-circle">1</div>
+                    <div class="step-label">Input DNA</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-target="step-2">
+                    <div class="step-circle">2</div>
+                    <div class="step-label">Select Region</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-target="step-3">
+                    <div class="step-circle">3</div>
+                    <div class="step-label">Settings</div>
+                </div>
+                <div class="step-line"></div>
+                <div class="step" data-target="step-4">
+                    <div class="step-circle">4</div>
+                    <div class="step-label">Results</div>
+                </div>
+            </div>
+
+            <!-- Step Panels -->
+            <div class="panels-container">
+                <!-- STEP 1: Input DNA -->
+                <div id="step-1" class="panel active">
+                    <div class="panel-header">
+                        <h2>Input Sequence</h2>
+                        <p class="subtitle">Provide the target DNA string to search for Purine tracks</p>
+                    </div>
+                    
+                    <div class="tabs">
+                        <button class="tab-btn active" data-tab="tab-manual">Manual Input</button>
+                        <button class="tab-btn" data-tab="tab-fasta">FASTA Upload</button>
+                        <button class="tab-btn" data-tab="tab-ncbi">NCBI Fetch</button>
+                    </div>
+
+                    <div class="tab-content active" id="tab-manual">
+                        <div class="input-group">
+                            <label for="manual-seq">DNA Sequence (5' -> 3')</label>
+                            <textarea id="manual-seq" rows="8" placeholder="Enter DNA Sequence e.g., ACTG..."></textarea>
+                            <div class="stats-row">
+                                <span class="stat" id="manual-length">Length: 0 bp</span>
+                                <button class="btn btn-secondary btn-sm" id="btn-clear-manual">Clear</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-fasta">
+                        <div class="upload-area" id="fasta-drop-area">
+                            <div class="upload-icon" aria-hidden="true"></div>
+                            <h3>Drag & Drop a FASTA file</h3>
+                            <p>or</p>
+                            <input type="file" id="fasta-file" accept=".fasta,.fa,.txt" class="file-input">
+                            <label for="fasta-file" class="btn btn-secondary">Browse File</label>
+                            <div id="fasta-file-name" class="mt-4 text-accent"></div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="tab-ncbi">
+                        <div class="input-group">
+                            <label for="ncbi-id">Gene Name or Accession (NM_ / NC_)</label>
+                            <div class="search-box">
+                                <input type="text" id="ncbi-id" placeholder="e.g. NM_000546 or TP53">
+                                <button class="btn btn-primary" id="btn-fetch-ncbi">Search</button>
+                            </div>
+                            <p class="help-text text-accent mt-1" id="input-type-feedback"></p>
+                        </div>
+                        
+                        <div class="input-group mt-4" id="organism-group">
+                            <label for="ncbi-organism">Organism (for Gene Name Search)</label>
+                            <input type="text" id="ncbi-organism" value="Homo sapiens" placeholder="e.g. Homo sapiens">
+                        </div>
+
+
+
+                        <div id="ncbi-loading" class="loading-spinner hidden">
+                            <div class="spinner"></div>
+                            <span id="ncbi-loading-text">Communicating with NCBI...</span>
+                        </div>
+                    </div>
+
+                    <div class="panel-actions">
+                        <button class="btn btn-primary" id="btn-next-1">Next: Select Region</button>
+                    </div>
+                </div>
+
+                <!-- STEP 2: Region Selection -->
+                <div id="step-2" class="panel">
+                    <div class="panel-header">
+                        <h2>Select Target Region</h2>
+                        <p class="subtitle">Choose an annotated region or define manual coordinates</p>
+                    </div>
+
+                    <div class="region-options">
+                        <div class="radio-card selected">
+                            <input type="radio" name="region_type" id="region-full" value="full" checked>
+                            <label for="region-full">
+                                <h3>Full Sequence</h3>
+                                <p>Analyze the entire inputted sequence</p>
+                            </label>
+                        </div>
+                        <div class="radio-card">
+                            <input type="radio" name="region_type" id="region-manual" value="manual">
+                            <label for="region-manual">
+                                <h3>Custom Coordinates</h3>
+                                <p>Provide exact start and end positions</p>
+                                <div class="custom-coords hidden" id="custom-coords-inputs">
+                                    <div class="input-row">
+                                        <div class="input-group">
+                                            <label>Start</label>
+                                            <input type="number" id="manual-start" min="1" placeholder="1">
+                                        </div>
+                                        <div class="input-group">
+                                            <label>End</label>
+                                            <input type="number" id="manual-end" min="1" placeholder="100">
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                        <div class="radio-card" id="card-annotations" style="display: none;">
+                            <input type="radio" name="region_type" id="region-annotation" value="annotation">
+                            <label for="region-annotation">
+                                <h3>GenBank Annotation</h3>
+                                <p>Select an explicit feature fetched from NCBI</p>
+                                <div class="annotations-list hidden" id="annotations-list">
+                                    <div class="annotation-filters" style="margin-bottom: 15px; display: flex; gap: 10px; flex-wrap: wrap; font-size: 0.9em;">
+                                        <label><input type="checkbox" class="ann-filter-cb" value="gene" checked> Gene</label>
+                                        <label><input type="checkbox" class="ann-filter-cb" value="CDS" checked> CDS</label>
+                                        <label><input type="checkbox" class="ann-filter-cb" value="exon" checked> Exon</label>
+                                        <label><input type="checkbox" class="ann-filter-cb" value="intron"> Intron</label>
+                                        <label><input type="checkbox" class="ann-filter-cb" value="UTR"> UTR</label>
+                                        <label><input type="checkbox" class="ann-filter-cb" value="promoter" checked> Promoter</label>
+                                    </div>
+                                    <select id="annotation-select" class="form-select">
+                                    </select>
+                                    
+                                    <div class="promoter-inputs hidden" id="promoter-inputs" style="margin-top:12px;">
+                                        <div class="input-group">
+                                            <label for="promoter-length">Manual promoter length (bp)</label>
+                                            <input type="number" id="promoter-length" value="1000" min="1" max="5000" step="1">
+                                            <p class="help-text mt-1">Choose how many upstream bases to analyze relative to TSS.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="sequence-preview-mini">
+                        <h4>Sequence Preview (<span id="preview-length">0</span> bp)</h4>
+                        <div class="seq-box" id="seq-preview-text">No sequence provided yet.</div>
+                    </div>
+
+                    <div class="panel-actions space-between">
+                        <button class="btn btn-secondary" id="btn-back-2">Back</button>
+                        <button class="btn btn-primary" id="btn-next-2">Next: Configuration</button>
+                    </div>
+                </div>
+
+                <!-- STEP 3: Settings -->
+                <div id="step-3" class="panel">
+                    <div class="panel-header">
+                        <h2>Configuration Settings</h2>
+                        <p class="subtitle">Configure TTS detection rules and TFO generation parameters</p>
+                    </div>
+
+                    <div class="settings-grid">
+                        <!-- TTS Detection Rules -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <div class="icon" aria-hidden="true"></div>
+                                <h3>TTS Detection Rules</h3>
+                            </div>
+                            
+                            <div class="form-group">
+                                <div class="label-row">
+                                    <label for="tts-min-len">Minimum TTS Length</label>
+                                    <span class="value-display" id="val-tts-len">15 bp</span>
+                                </div>
+                                <input type="range" id="tts-min-len" min="10" max="35" value="15" step="1">
+                                <div class="range-labels">
+                                    <span>10</span><span>35</span>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group mt-4">
+                                <div class="label-row">
+                                    <label>Purine Threshold</label>
+                                    <span class="value-display" id="val-purine-ratio">80%</span>
+                                </div>
+                                <input type="range" id="tts-purine-ratio" min="0.6" max="1.0" value="0.8" step="0.05">
+                                <div class="range-labels">
+                                    <span>60%</span><span>100%</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- TFO Settings -->
+                        <div class="settings-card">
+                            <div class="card-header">
+                                <div class="icon" aria-hidden="true"></div>
+                                <h3>TFO Generation</h3>
+                            </div>
+
+                            <div class="form-group mt-4">
+                                <label class="mb-2 block">Lengths to Generate</label>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="length-cat" value="short" checked> Short (12-15)
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="length-cat" value="medium" checked> Medium (16-25)
+                                    </label>
+                                    <label class="checkbox-label">
+                                        <input type="checkbox" class="length-cat" value="long" checked> Long (26-40)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Filter Settings -->
+                        <div class="settings-card wide-card">
+                            <div class="card-header">
+                                <div class="icon" aria-hidden="true"></div>
+                                <h3>Result Filters & Specificity</h3>
+                            </div>
+
+                            <div class="filters-row">
+                                <div class="form-group">
+                                    <label class="toggle-switch">
+                                        <input type="checkbox" id="filter-unique-only" checked>
+                                        <span class="slider round"></span>
+                                        <span class="label-text">Unique Binding Only</span>
+                                    </label>
+                                    <p class="help-text mt-1">Keep candidates that bind to exactly one position in the selected target region.</p>
+                                </div>
+                            </div>
+                            <div class="filters-row mt-4">
+                                <div class="form-group">
+                                    <label>Max Target Mismatches</label>
+                                    <input type="number" id="filter-max-target-mismatches" value="2" min="0" max="5">
+                                    <p class="help-text mt-1">Allowed TFO-to-target pairing mismatches.</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Max TFO Purine Content (A + G)</label>
+                                    <input type="number" id="filter-max-tfo-purines" value="100" min="0" max="100">
+                                    <p class="help-text mt-1">Maximum allowed A/G bases in the generated TFO.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- API Error display area -->
+                    <div id="api-error" class="alert-error hidden">
+                        <div class="alert-icon" aria-hidden="true">!</div>
+                        <div class="alert-msg" id="api-error-msg"></div>
+                    </div>
+
+                    <div class="panel-actions space-between">
+                        <button class="btn btn-secondary" id="btn-back-3">Back</button>
+                        <button class="btn btn-primary btn-large generate-btn" id="btn-generate">
+                            <span class="btn-text">Find TFOs</span>
+                            <div class="spinner hidden" id="generate-spinner"></div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- STEP 4: Results -->
+                <div id="step-4" class="panel">
+                    <div class="panel-header space-between-center">
+                        <div>
+                            <h2>Analysis Results</h2>
+                            <p class="subtitle">Discovered candidates ranked by length and GC content</p>
+                        </div>
+                        <div class="summary-stats">
+                            <div class="stat-pill">
+                                <span class="lbl">TTS Regions</span>
+                                <span class="val" id="res-tts-count">0</span>
+                            </div>
+                            <div class="stat-pill">
+                                <span class="lbl">TFO Candidates</span>
+                                <span class="val" id="res-tfo-count">0</span>
+                            </div>
+                            <div class="stat-pill success">
+                                <span class="lbl">Unique</span>
+                                <span class="val" id="res-unique-count">0</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="results-layout">
+                        <!-- Left: Visualizer -->
+                        <div class="results-visualizer">
+                            <div class="card-header space-between-center">
+                                <h3>Target Sequence Viewer</h3>
+                                <button class="btn btn-icon btn-sm" id="btn-copy-seq" title="Copy Sequence">Copy</button>
+                            </div>
+                            <div class="sequence-viewer-container" id="master-sequence-viewer">
+                                <!-- JS inserts sequence with highlighted tags here -->
+                            </div>
+                        </div>
+
+                        <!-- Right/Bottom: Table -->
+                        <div class="results-table-container">
+                            <div class="card-header space-between-center">
+                                <h3>Candidate TFOs</h3>
+                                <button class="btn btn-secondary btn-sm" id="btn-export-csv" disabled>Export CSV</button>
+                            </div>
+                            <div class="table-wrapper">
+                                <table id="candidates-table">
+                                    <thead>
+                                        <tr>
+                                            <th class="sortable" data-sort="start">Range</th>
+                                            <th data-sort="tfo_sequence">TFO Sequence</th>
+                                            <th class="sortable" data-sort="length">Len</th>
+                                            <th class="sortable" data-sort="target_mismatches">Target Mism</th>
+                                            <th class="sortable" data-sort="purine_count">Purines</th>
+                                            <th class="sortable" data-sort="match_count">Matches</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="candidates-tbody">
+                                        <!-- populated by JS -->
+                                    </tbody>
+                                </table>
+                                <div id="no-results" class="hidden text-center py-5">
+                                    <p>No candidates found matching the selected criteria.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-actions space-between mt-4">
+                        <button class="btn btn-secondary" id="btn-back-4">Reconfigure</button>
+                        <button class="btn btn-primary" id="btn-new-analysis">New Analysis</button>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
